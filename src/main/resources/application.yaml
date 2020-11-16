@@ -1,0 +1,17 @@
+#端口
+server:
+  port: 8081
+
+#//数据库配置
+#spring.datasource.name=choice
+#spring.datasource.password=choice123
+#spring.datasource.url=jdbc:mysql://rm-bp12ec7ixn03ie08yto.mysql.rds.aliyuncs.com:3306/choice
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring:
+  datasource:
+    username: choice
+    password: choice123
+    url: jdbc:mysql://rm-bp12ec7ixn03ie08yto.mysql.rds.aliyuncs.com:3306/choice
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
