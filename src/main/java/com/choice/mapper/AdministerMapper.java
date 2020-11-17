@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AdministerMapper {
     //增
-    @Insert("insert administer (aid,password) values (#{uid},#{password})")
+    @Insert("insert administer (password) values (#{password})")
     int add(Administer administer);
     //删
     @Delete("delete from administer where aid=#{aid}")
