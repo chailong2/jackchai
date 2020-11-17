@@ -39,8 +39,8 @@ public class UserController {
         }
         logger.info( "sucess");
     }
-    @RequestMapping("login")
-    public String register(Student student)
+    @RequestMapping("signup")
+    public String signup(Student student)
     {
         System.out.println(student);
         Student student1=studentService.findStudentsByid(student.getUid());

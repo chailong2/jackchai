@@ -4,6 +4,7 @@ import com.choice.pojo.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,5 +16,7 @@ public interface StudentMapper {
     List<Student> findStudentList();
     @Select("select * from student where uid=#{id}")
     Student  findStudentsByid(String id);
+    @Update("")
+    int update(Student student);
 
 }
