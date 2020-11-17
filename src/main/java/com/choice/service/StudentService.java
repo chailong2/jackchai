@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface StudentService {
     List<Student> findStudentList();
-    Student  findStudentsByid(String id);
+    Student  findStudentsByid(Long id);
+    int add(Student student);
 }

@@ -15,8 +15,8 @@ public interface StudentMapper {
     @Select("select * from student")
     List<Student> findStudentList();
     @Select("select * from student where uid=#{id}")
-    Student  findStudentsByid(String id);
-    @Update("")
-    int update(Student student);
+    Student  findStudentsByid(Long id);
+    @Update("insert student (uname,mail,upassword) values(#{uname},#{mail},#{upassword})")
+    int add(Student student);
 
 }

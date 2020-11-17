@@ -64,8 +64,8 @@
             <div class=tagContent id=tagContent1>
                 <div class="login_title">管理员登录</div>
                 <ul>
-                    <li><input name="txtTel" type="text" id="txtTel" class="kuang" placeholder="用户名" ></li>
-                    <li><input name="txtTel" type="text" id="txtTel" class="kuang" placeholder="密码"></li>
+                    <li><input name="txtTel" type="text" class="kuang" placeholder="用户名" ></li>
+                    <li><input name="txtTel" type="text" class="kuang" placeholder="密码"></li>
                 </ul>
                 <div class="hd_register_black">
                     <input type="button" name="btnLogin" value="登录" id="btnLogin"  class="hd_register_btn hd_register_btnleft">
@@ -76,21 +76,19 @@
                      <input type="button" name="btnLogin" value="点击使用" id="btnLogin" class="hd_register_btn01 hd_register_btnleft01">
                  </div>-->
             </div>
+            <form action="/users/signup" method="post">
             <div class=tagContent id=tagContent2 style="height: 500px">
                 <div class="login_title">注册</div>
                 <ul style="margin-left: 200px">
-                    <li><input name="txtTel" type="text" id="txtTel" class="kuang" placeholder="用户名" ></li>
-                    <li><input name="txtTel" type="text" id="txtTel" class="kuang" placeholder="密码"></li>
-                    <li><input name="txtTel" type="text" id="txtTel" class="kuang" placeholder="邮箱"></li>
+                    <li><input name="uname" type="text"  class="kuang" placeholder="用户名" ></li>
+                    <li><input name="upassword" type="text"  class="kuang" placeholder="密码"></li>
+                    <li><input name="mail" type="text"  class="kuang" placeholder="邮箱"></li>
                 </ul>
                 <div class="hd_register_black">
-                    <input type="button" name="btnLogin" value="登录" id="btnLogin"  class="hd_register_btn hd_register_btnleft">
+                    <input type="submit" name="btnLogin" value="注册"  class="hd_register_btn hd_register_btnleft">
                 </div>
-
-
             </div>
-
-
+            </form>
         </div>
     </div>
     <div class="banner"><img src="/images/bg.jpg"/></div>
@@ -111,9 +109,9 @@
         $.ajax({
             type: "Post",
             //方法所在页面和方法名
-            url: "WebService2.asmx/GetEmailCode",
+            url: "${pageContext.request.contextPath}/user/signup",
             contentType: "application/json; charset=utf-8",
-            data: '{email: "' + email + '"}',
+            data: '{email: "' + email + '",username:""'++'}',
             dataType: "json",
             success: function (data) {
                 debugger;

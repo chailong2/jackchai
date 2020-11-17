@@ -18,8 +18,13 @@ public class StudentServiceImp implements StudentService {
     }
 
     @Override
-    public Student findStudentsByid(String id) {
+    public Student findStudentsByid(Long id) {
         return studentMapper.findStudentsByid(id);
     }
+
+    @Override
+    public int add(Student student){
+        return studentMapper.add(student);
+    };
 
 }
