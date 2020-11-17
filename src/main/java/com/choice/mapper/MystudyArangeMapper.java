@@ -1,13 +1,12 @@
 package com.choice.mapper;
 
 import com.choice.pojo.Mystudyarange;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Mapper
+@Repository
 public interface MystudyArangeMapper {
     //增
     @Insert("insert mystudyarange (uid,target,cet,grade,postgraduate) " +

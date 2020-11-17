@@ -4,8 +4,9 @@ import com.choice.mapper.AdministerMapper;
 import com.choice.pojo.Administer;
 import com.choice.service.AdministerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service("AdministerService")
 public class AdministerServiceImp implements AdministerService {
     @Autowired
     AdministerMapper mapper;

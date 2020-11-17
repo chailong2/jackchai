@@ -4,9 +4,11 @@ import com.choice.mapper.MyjobarangeMapper;
 import com.choice.pojo.Myjobarange;
 import com.choice.service.MyjobarangeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("MyjobarangeService")
 public class MyjobarangeServiceImp implements MyjobarangeService {
     @Autowired
     MyjobarangeMapper mapper;

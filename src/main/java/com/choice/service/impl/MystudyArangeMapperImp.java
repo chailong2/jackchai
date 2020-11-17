@@ -4,9 +4,11 @@ import com.choice.mapper.MystudyArangeMapper;
 import com.choice.pojo.Mystudyarange;
 import com.choice.service.MystudyArangeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("MystudyArangeService")
 public class MystudyArangeMapperImp implements MystudyArangeService {
     @Autowired
     MystudyArangeMapper mapper;
