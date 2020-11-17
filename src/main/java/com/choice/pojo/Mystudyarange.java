@@ -2,19 +2,15 @@ package com.choice.pojo;
 
 
 public class Mystudyarange {
-
   private String id;
   private String uid;
   private String target;
   private String cet;
   private String grade;
   private String postgraduate;
-
-
   public String getId() {
     return id;
   }
-
   public void setId(String id) {
     this.id = id;
   }
@@ -64,4 +60,15 @@ public class Mystudyarange {
     this.postgraduate = postgraduate;
   }
 
+  @Override
+  public String toString() {
+    return "Mystudyarange{" +
+            "id='" + id + '\'' +
+            ", uid='" + uid + '\'' +
+            ", target='" + target + '\'' +
+            ", cet='" + cet + '\'' +
+            ", grade='" + grade + '\'' +
+            ", postgraduate='" + postgraduate + '\'' +
+            '}';
+  }
 }

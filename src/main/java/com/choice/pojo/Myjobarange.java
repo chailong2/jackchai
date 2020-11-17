@@ -44,4 +44,13 @@ public class Myjobarange {
     this.company = company;
   }
 
+  @Override
+  public String toString() {
+    return "Myjobarange{" +
+            "id='" + id + '\'' +
+            ", uid='" + uid + '\'' +
+            ", career='" + career + '\'' +
+            ", company='" + company + '\'' +
+            '}';
+  }
 }

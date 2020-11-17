@@ -24,4 +24,11 @@ public class Administer {
     this.password = password;
   }
 
+  @Override
+  public String toString() {
+    return "Administer{" +
+            "aid='" + aid + '\'' +
+            ", password='" + password + '\'' +
+            '}';
+  }
 }
