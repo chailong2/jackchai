@@ -12,6 +12,7 @@ public class Student {
   private double cet;
   private double grade;
   private String mail;
+  private String school;
 
 
   public long getUid() {
@@ -94,6 +95,14 @@ public class Student {
     this.mail = mail;
   }
 
+  public String getSchool() {
+    return school;
+  }
+
+  public void setSchool(String school) {
+    this.school = school;
+  }
+
   @Override
   public String toString() {
     return "Student{" +
@@ -106,6 +115,7 @@ public class Student {
             ", cet=" + cet +
             ", grade=" + grade +
             ", mail='" + mail + '\'' +
+            ", school='" + school + '\'' +
             '}';
   }
 }

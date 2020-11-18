@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/users")
 public class UserController {
+    Student student22=null;
     @Autowired
     StudentService studentService;
     Logger logger= LoggerFactory.getLogger(UserController.class);
@@ -27,6 +28,7 @@ public class UserController {
             return modelAndView;
         }
         logger.info( "sucess");
+        student22=student1;
         modelAndView.addObject("date","main");
         modelAndView.addObject("name",student1.getUname());
         modelAndView.setViewName("index");
@@ -39,6 +41,14 @@ public class UserController {
         int flag=studentService.add(student);
         System.out.println(flag);
         mv.setViewName("login");
+        return mv;
+    }
+    @RequestMapping("/selfinfo")
+    public ModelAndView slef()
+    {
+        ModelAndView mv =new ModelAndView();
+        mv.addObject("student",student22);
+        mv.setViewName("selfinfo");
         return mv;
     }
 }
