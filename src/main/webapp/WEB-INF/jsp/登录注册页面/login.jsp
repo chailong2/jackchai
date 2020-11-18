@@ -5,7 +5,8 @@
   Time: 9:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,9 +32,11 @@
             j.style.display = "none";
         }
         document.getElementById(showContent).style.display = "block";
-
-
     }
+
+
+
+
 </SCRIPT>
 <body>
 <div class="content_room">
@@ -43,7 +46,7 @@
             <li class=selectTag><a onClick="selectTag('tagContent0',this)"  href="javascript:void(0)">登录中心</a> </li>
             <li><a onClick="selectTag('tagContent1',this)"  href="javascript:void(0)">管理员登录</a> </li>
             <li><a onClick="selectTag('tagContent2',this)" href="javascript:void(0)">注册</a> </li>
-            <span><a href="#">返回首页 ></a></span>
+            <span><a href="/index">返回首页 ></a></span>
         </ul>
 
         <div id=tagContent>
@@ -55,27 +58,29 @@
                         <input name="uid" type="text" id="username" class="kuang"></li>
                     <li><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
                         <input name="upassword" type="password"  id="password" class="kuang"></li>
+
+                    <c:if test="${fail eq'a'}">
+                        <span style="color: red;font-size: 12px;margin-left: 150px;width: 400px">账号或密码错误请重新输入！</span>
+                    </c:if>
                 </ul>
+
                 <div class="hd_register_black">
                     <input type="submit" name="btnLogin" value="登录"  class="hd_register_btn hd_register_btnleft">
                 </div>
             </div>
             </form>
+            <form action="/administer/login" method="post">
             <div class=tagContent id=tagContent1>
                 <div class="login_title">管理员登录</div>
                 <ul>
-                    <li><input name="txtTel" type="text" class="kuang" placeholder="用户名" ></li>
-                    <li><input name="txtTel" type="text" class="kuang" placeholder="密码"></li>
+                    <li><input name="aid" type="text" class="kuang" placeholder="用户名" ></li>
+                    <li><input name="password" type="text" class="kuang" placeholder="密码"></li>
                 </ul>
                 <div class="hd_register_black">
-                    <input type="button" name="btnLogin" value="登录" id="btnLogin"  class="hd_register_btn hd_register_btnleft">
+                    <input type="submit" name="btnLogin" value="登录" id="btnLogin"  class="hd_register_btn hd_register_btnleft">
                 </div>
-                <!-- <span>您所查询的兑换码真实有效，可放心使用。</span>
-                 <div class="mark">兑换码已被使用5个，剩余有效兑换码数量为95个</div>
-                  <div class="hd_register_black01">
-                     <input type="button" name="btnLogin" value="点击使用" id="btnLogin" class="hd_register_btn01 hd_register_btnleft01">
-                 </div>-->
             </div>
+            </form>
             <form action="/users/signup" method="post">
             <div class=tagContent id=tagContent2 style="height: 500px">
                 <div class="login_title">注册</div>
